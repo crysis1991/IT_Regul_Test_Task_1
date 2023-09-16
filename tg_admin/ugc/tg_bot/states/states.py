@@ -3,7 +3,7 @@ from telebot import custom_filters
 from ..loader import log, bot
 
 
-class UserStates(StatesGroup):
+class RegisterStates(StatesGroup):
     log.debug('')
     base = State()
     request_phone = State()
@@ -14,6 +14,15 @@ class UserStates(StatesGroup):
     new_first_name = State()
     new_last_name = State()
     edit_user_data = State()
+    registered = State()
+
+
+class ServiceStates(StatesGroup):
+    base = State()
+    sub_service = State()
+    date = State()
+    time = State()
+    made_an_appointment = State()
 
 
 bot.add_custom_filter(custom_filters.StateFilter(bot))
